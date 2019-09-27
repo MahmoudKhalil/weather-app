@@ -10,10 +10,12 @@ const forecast = (locationObj, callback) => {
             callback(res.body.error)
         } else {
             data = {
-                weather: res.body.currently.termperature,
+                weather: res.body.currently.temperature,
                 place: locationObj.placeName
             }
             callback(undefined, data)
         }
     })
 }
+
+module.exports = forecast
